@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #202020;
+  --color-secondary: #5F5F5F;
+  --color-tertiary: #F8F8F8;
+  --color-white: #FFFFFF;
+  --color-bg: #FBFAF7;
+  --color-accent: #A66A3F;
+  --color-line: #E5E5E5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    font-family: var(--font-inter), Inter, "PingFang SC", "Microsoft YaHei",
+      "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans SC", system-ui,
+      sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  /* numerals use tabular-nums everywhere */
+  .num,
+  [data-num] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+}
+
+@layer utilities {
+  .grayscale-photo {
+    /* keep editorial restraint, but allow a sliver of real color so photos feel alive */
+    filter: grayscale(18%) contrast(1.05) saturate(0.96) brightness(1.01);
+  }
+
+  .hairline {
+    border-color: var(--color-line);
+  }
+
+  .container-x {
+    /* 8% on mobile, 10% on lg+ */
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+  @media (min-width: 1024px) {
+    .container-x {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
