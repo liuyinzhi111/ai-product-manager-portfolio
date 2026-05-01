@@ -1,18 +1,14 @@
-/** @type {import('next').NextConfig} */
+const repoName = "ai-product-manager-portfolio";
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
-  reactStrictMode: true,
+  output: "export",
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "picsum.photos",
-      },
-      {
-        protocol: "https",
-        hostname: "fastly.picsum.photos",
-      },
-    ],
+    unoptimized: true,
   },
+  basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}/` : "",
+  trailingSlash: true,
 };
 
 export default nextConfig;

@@ -6,6 +6,16 @@ export const metadata = {
 
 type Params = { slug: string };
 
+export function generateStaticParams() {
+  return [
+    { slug: "ai-agent-demo" },
+    { slug: "hr-policy-agent" },
+    { slug: "license-plate-recognition" },
+    { slug: "aigc-short-drama-research" },
+  ];
+}
+
+
 export default function ProjectDetailPage({ params }: { params: Params }) {
   return (
     <section className="container-x mx-auto min-h-screen pb-24 pt-32 md:pt-40">
