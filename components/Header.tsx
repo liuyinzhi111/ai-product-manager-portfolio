@@ -13,6 +13,9 @@ const NAV_ITEMS: { label: string; href: string }[] = [
   { label: "联系", href: "/#contact" },
 ];
 
+const BASE_PATH =
+  process.env.NODE_ENV === "production" ? "/ai-product-manager-portfolio" : "";
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,7 +38,7 @@ export default function Header() {
     >
       <nav className="container-x mx-auto flex h-14 items-center justify-between">
         <a
-          href="/resume.pdf"
+          href={`${BASE_PATH}/resume.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="查看并下载简历 PDF"

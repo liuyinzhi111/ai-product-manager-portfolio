@@ -1,6 +1,9 @@
 import Image from "next/image";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 
+const BASE_PATH =
+  process.env.NODE_ENV === "production" ? "/ai-product-manager-portfolio" : "";
+
 export default function Hero() {
   return (
     <section
@@ -69,7 +72,7 @@ export default function Hero() {
             className="relative h-[60vh] w-full overflow-hidden rounded-[24px] shadow-[0_8px_30px_-16px_rgba(0,0,0,0.10)] md:h-[calc(100svh-7rem)]"
           >
             <Image
-              src="/images/profile.jpg"
+              src={`${BASE_PATH}/images/profile.jpg`}
               alt="刘盛瑞"
               fill
               sizes="(min-width: 768px) 40vw, 100vw"

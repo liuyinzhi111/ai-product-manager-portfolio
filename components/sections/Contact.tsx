@@ -4,6 +4,9 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 type FooterLink = { label: string; href: string; external?: boolean };
 
+const BASE_PATH =
+  process.env.NODE_ENV === "production" ? "/ai-product-manager-portfolio" : "";
+
 const NAV_LINKS: FooterLink[] = [
   { label: "关于我", href: "#about" },
   { label: "能力栈", href: "#stack" },
@@ -32,7 +35,7 @@ const RESOURCE_LINKS: FooterLink[] = [
   { label: "AI 产品知识库", href: "#notes" },
   { label: "项目复盘", href: "#notes" },
   { label: "学习笔记", href: "#notes" },
-  { label: "简历 PDF", href: "/resume.pdf", external: true },
+  { label: "简历 PDF", href: `${BASE_PATH}/resume.pdf`, external: true },
   { label: "邮箱联系", href: "mailto:2499694881@qq.com" },
 ];
 
